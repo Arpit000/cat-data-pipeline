@@ -1,0 +1,20 @@
+docker pull postgres
+
+docker run --name myPostgres \
+  -e POSTGRES_PASSWORD=PASSWORD \
+  -p 5432:5432 \
+  -d postgres
+
+docker ps
+
+docker logs myPostgres
+
+docker stop myPostgres
+
+docker rm myPostgres
+
+docker run --name myPostgres \
+  -e POSTGRES_PASSWORD=PASSWORD \
+  -p 5432:5432 \
+  -v pg_data:/var/lib/postgresql/data \
+  -d postgres

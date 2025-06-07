@@ -1,0 +1,12 @@
+--Every day at 2:00 AM, run my Python script to upload a DataFrame to my Dockerized Postgres
+
+
+
+crontab -e
+
+0 2 * * * {YOUR PYTHON EXECUTABLE} {YOUR SCRIPT} >> /Users/yourname/Projects/cron_output.log 2>&1
+
+crontab -l
+
+cat /Users/yourname/Projects/cron_output.log
+
